@@ -29,9 +29,13 @@ public class Rot13 {
     public static String rot13(String beginningString) {
         String endString = "";
         for (char i : beginningString.toCharArray()) {
-            if ((i >= 'A' && i <= 'M') || (i >= 'a' && i <= 'm')) i += 13;
-            if ((i >= 'N' && i <= 'Z') || (i >= 'n' && i <= 'z')) i -= 13;
-            endString += i;
+            if ((i >= 'A' && i <= 'M') || (i >= 'a' && i <= 'm')) {
+                endString += (char) (i + 13);
+            } else if ((i >= 'N' && i <= 'Z') || (i >= 'n' && i <= 'z')) {
+                endString += (char) (i - 13);
+            } else {
+                endString += i;
+            }
         }
         return endString;
     }
