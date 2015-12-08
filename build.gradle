@@ -20,8 +20,11 @@ task wrapper(type: Wrapper) {
 apply plugin: 'java'
 apply plugin: 'cobertura'
 apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'application'
 
 cobertura.coverageFormats = ['html', 'xml']
+
+mainClassName = 'io.github.ztaylor54.CTF_Toolkit.App'
 
 sourceCompatibility = 1.7
 
