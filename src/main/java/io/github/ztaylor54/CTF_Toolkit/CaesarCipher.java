@@ -19,20 +19,26 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-public class Rot13 {
+public class CaesarCipher {
     /**
-     * An implementation of the ROT13 cipher, one that is commonly used in many CTFs.
+     * An implementation of the Caesar cipher, one that is commonly used in many CTFs.
      *
      * @param beginningString The string you would like to "encrypt"
      * @return The "encrypted" string
      */
-    public static String rot13(String beginningString) {
+    public static String caesar(int amount, String beginningString) {
         String endString = "";
+        amount = amount % 26;
+        if (amount == 0) return beginningString;
         for (char i : beginningString.toCharArray()) {
-            if ((i >= 'A' && i <= 'M') || (i >= 'a' && i <= 'm')) {
-                endString += (char) (i + 13);
-            } else if ((i >= 'N' && i <= 'Z') || (i >= 'n' && i <= 'z')) {
-                endString += (char) (i - 13);
+            if (Character.isAlphabetic(i)) {
+                char newCharacter = (char) (i + amount);
+                if ((Character.isLowerCase(i) && !Character.isLowerCase(newCharacter))) {
+                    newCharacter = (char) ('a' - 1 + (newCharacter - 'z'));
+                } else if ((Character.isUpperCase(i) && !Character.isUpperCase(newCharacter))) {
+                    newCharacter = (char) ('A' - 1 + (newCharacter - 'Z'));
+                }
+                endString += newCharacter;
             } else {
                 endString += i;
             }

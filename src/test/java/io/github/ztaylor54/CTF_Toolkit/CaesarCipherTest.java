@@ -23,37 +23,30 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class Rot13Test {
+public class CaesarCipherTest {
     @Test
     public void constructor() {
-        Rot13 rot13 = new Rot13();
+        CaesarCipher caesarCipher = new CaesarCipher();
     }
     
     @Test
-    public void upperCaseAToM() {
-        String str = "ABCDEFGHIJKLM/";
-        String rotated = Rot13.rot13(str);
-        assertEquals("NOPQRSTUVWXYZ/", rotated);
+    public void rot26() {
+        String str = "rot26 this";
+        String rotated = CaesarCipher.caesar(26, str);
+        assertEquals("rot26 this", rotated);
     }
 
     @Test
-    public void upperCaseNToZ() {
-        String str = "NOPQRSTUVWXYZ/";
-        String rotated = Rot13.rot13(str);
-        assertEquals("ABCDEFGHIJKLM/", rotated);
+    public void rot13() {
+        String str = "ROT13 this";
+        String rotated = CaesarCipher.caesar(13, str);
+        assertEquals("EBG13 guvf", rotated);
     }
 
     @Test
-    public void lowerCaseAToM() {
-        String str = "abcdefghijklm/";
-        String rotated = Rot13.rot13(str);
-        assertEquals("nopqrstuvwxyz/", rotated);
-    }
-
-    @Test
-    public void lowerCaseNToZ() {
-        String str = "nopqrstuvwxyz/";
-        String rotated = Rot13.rot13(str);
-        assertEquals("abcdefghijklm/", rotated);
+    public void rot256() {
+        String str = "ROT256 this";
+        String rotated = CaesarCipher.caesar(256, str);
+        assertEquals("NKP256 pdeo", rotated);
     }
 }
