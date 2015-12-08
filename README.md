@@ -1,7 +1,7 @@
 # CTF-Toolkit
 Toolkit tailored for [CTF](https://ctftime.org/) competitions
 
-[![Build Status](https://travis-ci.org/ztaylor54/CTF-Toolkit.svg)](https://travis-ci.org/ztaylor54/CTF-Toolkit)   ![version](https://badge.fury.io/gh/ztaylor54%2FCTF-Toolkit.svg)
+[![Build Status](https://travis-ci.org/ztaylor54/CTF-Toolkit.svg)](https://travis-ci.org/ztaylor54/CTF-Toolkit)   [![version](https://badge.fury.io/gh/ztaylor54%2FCTF-Toolkit.svg)](http://badge.fury.io/for/gh/ztaylor54/CTF-Toolkit)
 
 # Repository rules
 
