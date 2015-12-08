@@ -7,6 +7,9 @@ task wrapper(type: Wrapper) {
 }
 
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'io.github.ztaylor54.CTF_Toolkit.App'
 
 sourceCompatibility = 1.7
 
