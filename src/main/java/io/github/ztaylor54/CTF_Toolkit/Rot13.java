@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-public abstract class Rot13 {
+public class Rot13 {
     /**
      * An implementation of the ROT13 cipher, one that is commonly used in many CTFs.
      *
