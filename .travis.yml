@@ -5,6 +5,9 @@ install:
 script:
   - gradle check
 
+after_success:
+  - gradle cobertura coveralls
+
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
