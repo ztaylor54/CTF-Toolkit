@@ -25,6 +25,11 @@ import static org.junit.Assert.assertEquals;
 
 public class Rot13Test {
     @Test
+    public void constructor() {
+        Rot13 rot13 = new Rot13();
+    }
+    
+    @Test
     public void upperCaseAToM() {
         String str = "ABCDEFGHIJKLM";
         String rotated = Rot13.rot13(str);
