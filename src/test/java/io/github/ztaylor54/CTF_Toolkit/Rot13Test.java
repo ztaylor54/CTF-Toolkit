@@ -31,29 +31,29 @@ public class Rot13Test {
     
     @Test
     public void upperCaseAToM() {
-        String str = "ABCDEFGHIJKLM";
+        String str = "ABCDEFGHIJKLM/";
         String rotated = Rot13.rot13(str);
-        assertEquals("NOPQRSTUVWXYZ", rotated);
+        assertEquals("NOPQRSTUVWXYZ/", rotated);
     }
 
     @Test
     public void upperCaseNToZ() {
-        String str = "NOPQRSTUVWXYZ";
+        String str = "NOPQRSTUVWXYZ/";
         String rotated = Rot13.rot13(str);
-        assertEquals("ABCDEFGHIJKLM", rotated);
+        assertEquals("ABCDEFGHIJKLM/", rotated);
     }
 
     @Test
     public void lowerCaseAToM() {
-        String str = "abcdefghijklm";
+        String str = "abcdefghijklm/";
         String rotated = Rot13.rot13(str);
-        assertEquals("nopqrstuvwxyz", rotated);
+        assertEquals("nopqrstuvwxyz/", rotated);
     }
 
     @Test
     public void lowerCaseNToZ() {
-        String str = "nopqrstuvwxyz";
+        String str = "nopqrstuvwxyz/";
         String rotated = Rot13.rot13(str);
-        assertEquals("abcdefghijklm", rotated);
+        assertEquals("abcdefghijklm/", rotated);
     }
 }
