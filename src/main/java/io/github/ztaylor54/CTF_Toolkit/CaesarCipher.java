@@ -23,6 +23,7 @@ public class CaesarCipher {
     /**
      * An implementation of the Caesar cipher, one that is commonly used in many CTFs.
      *
+     * @param amount The amount you would like to shift by, negative for left-shift
      * @param beginningString The string you would like to "encrypt"
      * @return The "encrypted" string
      */
@@ -34,9 +35,13 @@ public class CaesarCipher {
             if (Character.isAlphabetic(i)) {
                 char newCharacter = (char) (i + amount);
                 if ((Character.isLowerCase(i) && !Character.isLowerCase(newCharacter))) {
-                    newCharacter = (char) ('a' - 1 + (newCharacter - 'z'));
+                    newCharacter = amount > 0
+                            ? (char) ('a' - 1 + (newCharacter - 'z'))
+                            : (char) ('z' + 1 - ('a' - newCharacter));
                 } else if ((Character.isUpperCase(i) && !Character.isUpperCase(newCharacter))) {
-                    newCharacter = (char) ('A' - 1 + (newCharacter - 'Z'));
+                    newCharacter = amount > 0
+                            ? (char) ('A' - 1 + (newCharacter - 'Z'))
+                            : (char) ('Z' + 1 - ('A' - newCharacter));
                 }
                 endString += newCharacter;
             } else {

@@ -31,9 +31,9 @@ public class CaesarCipherTest {
     
     @Test
     public void rot26() {
-        String str = "rot26 this";
+        String str = "ROT26 this";
         String rotated = CaesarCipher.caesar(26, str);
-        assertEquals("rot26 this", rotated);
+        assertEquals("ROT26 this", rotated);
     }
 
     @Test
@@ -48,5 +48,12 @@ public class CaesarCipherTest {
         String str = "ROT256 this";
         String rotated = CaesarCipher.caesar(256, str);
         assertEquals("NKP256 pdeo", rotated);
+    }
+
+    @Test
+    public void decryptRot13() {
+        String str = "EBG13 guvf";
+        String rotated = CaesarCipher.caesar(-13, str);
+        assertEquals("ROT13 this", rotated);
     }
 }
