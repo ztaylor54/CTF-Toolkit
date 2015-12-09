@@ -23,7 +23,7 @@ public class CaesarCipher {
     /**
      * An implementation of the Caesar cipher, one that is commonly used in many CTFs.
      *
-     * @param amount The amount you would like to shift by
+     * @param amount The amount you would like to shift by, negative for left-shift
      * @param beginningString The string you would like to "encrypt"
      * @return The "encrypted" string
      */
